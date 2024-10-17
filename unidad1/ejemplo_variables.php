@@ -9,8 +9,10 @@
 
 <body>
     <?php
-
+    //Las constantes se definen utilizando la funcion define
     define("VIDA_MAX", 100);
+    //O utilizando la palabra reservada const
+    const MIN_ALUMNOS = 5;
 
     $array_numeros = array(23, 12 - 2, 34, 23);
 
@@ -35,6 +37,8 @@
     print "<br/> La suma de 23 y 24 es $num3";
 
     if (2 >= 2) {
+
+        
         //nombre esta declarada dentro del if solo accesible dentro del if
         $nombre = "pepe";
         print "<br/> Entra";

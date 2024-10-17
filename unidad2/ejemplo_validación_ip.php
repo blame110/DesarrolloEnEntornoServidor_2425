@@ -53,6 +53,14 @@
             $formato_correcto = false;
             break;
         }
+        else
+        //Comprobamos que no haya 0 a la izquierda
+        if (strlen($numero)>1 && $numero[0]=='0')
+        {
+            echo "La ip no tiene el formato correcto, ceros a la izquierda";
+            $formato_correcto = false;
+            break;
+        }
     }
 
     if ($numeros_ip[0]==0 || $numeros_ip[0]==255 || $numeros_ip[3]==0 || $numeros_ip[3]==255)
