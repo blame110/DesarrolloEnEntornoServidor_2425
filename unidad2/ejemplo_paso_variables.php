@@ -1,3 +1,7 @@
+<?php
+    declare(strict_types=1);
+    include './lib/funciones.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,20 +10,23 @@
     <title>Document</title>
 </head>
 <body>
-    <?php 
-   
-    /**
-     * powertotalis
-     * La funcion recibe un numero y una potencia y devuelve el número elevado a esa potencia
-     * @param  mixed $numero
-     * @param  mixed $potencia
-     * @return void
-     */
-    function powertotalis($numero,$potencia)
+    <?php
+
+    $nombre_funcion = "maximo";
+
+    function maximo()
     {
-        $numero = $numero**$potencia;
-        echo $numero."<br/>";;
+        //Con get args podemos recuperar todos los argumentos con los
+        //que se ha llamado a una funcion, los devuelve como un array
+        $parametros = func_get_args();
+
+
+        //usamos la función máx que nos devuel el máximo de los numeros
+        return max($parametros);
+
+
     }
+
 
     /**
      * Ejercicio4 realizar un programa en php que lea los siguientes datos de un formulario; 
@@ -27,7 +34,7 @@
      * 3 checkbox, uno denominado media, otro sucesion aritmetica y otro factorial
      * Un textarea con con tres lineas llenas de datos de tipo int float y string,separados por comas
      * Debe de tener un diseño cuco con bootstrap
-     * 
+     *    
      * El programa php debe de realizar los siguiente, 
      * la suma de todos los enteros, y los float, por separado y juntos.
      * La media de todos los numeros si el checkbox esta marcado
@@ -60,6 +67,9 @@
     powertotalis_ref($valor,3);
 
     echo $valor."<br/>";
+
+    
+    echo $nombre_funcion(23,24,1,-2,0,345,223)."<br/>";
 
 
     ?>
