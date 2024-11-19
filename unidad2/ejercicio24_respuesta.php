@@ -39,18 +39,27 @@
         header("Location: ejercicio24.php");
     } else {
         $posicion= $_POST["rango"];
-
-        echo "Suma: " . suma($_POST["datos"], SUMA_TODOS);
-        echo "<br/>";
-        echo "Media: " . media($_POST["datos"]);
-        echo "<br/>";
-
         //Separamos las lineas
         $lineas = explode("\n", $_POST["datos"]);
-
         //Separamos los numeros en dos arrays
         $lista_enteros = explode(",", $lineas[0]);
-        echo "Factorial: " . factorial($lista_enteros,$posicion);
+
+        $resultado["media"]= media($_POST["datos"]);
+        $resultado["sumaTodos"] = suma($_POST["datos"], SUMA_TODOS);
+        $resultado["sumaEnteros"] = suma($_POST["datos"], SUMA_ENTEROS);
+        $resultado["sumaDecimales"] = suma($_POST["datos"], SUMA_FLOATS);
+        $resultado["factorial"]= factorial($lista_enteros,$posicion);
+
+        echo "Suma: " . $resultado["sumaTodos"];
+        echo "<br/>";
+        echo "Media: " . $resultado["media"];
+        echo "<br/>";
+
+
+        echo "Factorial: " . $resultado["factorial"];
+
+
+
     }
 
     ?>
