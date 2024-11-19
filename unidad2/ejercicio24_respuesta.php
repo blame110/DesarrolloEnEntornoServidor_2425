@@ -44,19 +44,25 @@
         //Separamos los numeros en dos arrays
         $lista_enteros = explode(",", $lineas[0]);
 
-        $resultado["media"]= media($_POST["datos"]);
+
+        echo "Media: ".  $_POST("media"). "<br/>";
+        //Guardo en el array asociativo los datos
+        if (isset($_POST["media"]))
+            $resultado["media"]= media($_POST["datos"]);
+
         $resultado["sumaTodos"] = suma($_POST["datos"], SUMA_TODOS);
         $resultado["sumaEnteros"] = suma($_POST["datos"], SUMA_ENTEROS);
         $resultado["sumaDecimales"] = suma($_POST["datos"], SUMA_FLOATS);
+
         $resultado["factorial"]= factorial($lista_enteros,$posicion);
 
         echo "Suma: " . $resultado["sumaTodos"];
         echo "<br/>";
         echo "Media: " . $resultado["media"];
         echo "<br/>";
-
-
         echo "Factorial: " . $resultado["factorial"];
+
+
 
 
 
