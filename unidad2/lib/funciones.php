@@ -3,6 +3,9 @@
 define("SUMA_ENTEROS", 0);
 define("SUMA_FLOATS", 1);
 define("SUMA_TODOS", 2);
+define("SUCESION_SUMA", 3);
+define("SUCESION_MULTIP", 4);
+
 
 /**
  * powertotalis
@@ -77,6 +80,8 @@ function media($datos)
     return $media_numeros / $cantidad;
 }
 
+//function sucesion($numero,$tipo_sucesion)
+
 function factorial($lista_enteros, $posicion)
 {
     $num = 1;
@@ -85,6 +90,7 @@ function factorial($lista_enteros, $posicion)
 
     echo "Posicion del range $posicion";
     echo " numero " . $lista_enteros[$posicion];
+
     if (isset($lista_enteros[$posicion]))
         $num = $lista_enteros[$posicion];
     else

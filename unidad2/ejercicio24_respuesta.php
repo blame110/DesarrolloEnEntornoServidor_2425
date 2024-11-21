@@ -49,11 +49,13 @@
         if (isset($_POST["media"]))
             $resultado["media"] = media($_POST["datos"]);
 
-        if (isset($_POST["suma"])) {
-            $resultado["sumaTodos"] = suma($_POST["datos"], SUMA_TODOS);
-            $resultado["sumaEnteros"] = suma($_POST["datos"], SUMA_ENTEROS);
-            $resultado["sumaDecimales"] = suma($_POST["datos"], SUMA_FLOATS);
+        if (isset($_POST["sucesion"])) {
+           
         }
+
+        $resultado["sumaTodos"] = suma($_POST["datos"], SUMA_TODOS);
+        $resultado["sumaEnteros"] = suma($_POST["datos"], SUMA_ENTEROS);
+        $resultado["sumaDecimales"] = suma($_POST["datos"], SUMA_FLOATS);
 
         if (isset($_POST["factorial"]))
             $resultado["factorial"] = factorial($lista_enteros, $posicion);
