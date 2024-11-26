@@ -17,7 +17,6 @@
 
         <form method="POST" action="examen_respuesta.php">
 
-
             <div class="mb-3 form-check">
             <label class="form-check-label" for="pais">Pais </label>
                 <select name="pais" id="pais">

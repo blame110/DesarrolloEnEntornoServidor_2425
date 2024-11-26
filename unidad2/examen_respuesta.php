@@ -32,6 +32,8 @@
 
         var_dump(maxmin_recaudado($datos_tiendas));
 
+        
+
     }
 
     ?>
