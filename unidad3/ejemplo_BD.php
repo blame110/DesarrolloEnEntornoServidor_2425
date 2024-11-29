@@ -25,6 +25,16 @@ try {
 $entrenadoM = new Entrenador($con);
 
 echo "Borramos un entrenador<br>";
-$entrenadoM->borrar(7);
+$entrenadoM->borrar(9);
+
+$datos = $entrenadoM->cargarTodoPaginado(2,5);
+
+//$entrenadoM->insertar(['nif'=>'11111111a','nombre'=>'Jairo','edad'=>23,'altura'=>185]);
+
+//$entrenadoM->modificarTodo(['idEntrenador'=>'21','nif'=>'11111111a','nombre'=>'Patricia','edad'=>20,'altura'=>195]);
+
+//$datos = $entrenadoM->cargarTodoPaginado(2,10);
+
+var_dump($datos);
 
 ?>
