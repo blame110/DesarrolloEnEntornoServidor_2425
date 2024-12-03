@@ -1,5 +1,12 @@
 <?php
-class model
+namespace model;
+include_once ('./utils/utils.php');
+
+use PDO;
+use PDOException; 
+use utils\Utils;
+
+class Model
 {
 
     //Conexion que usaremos para todas las acciones
@@ -86,7 +93,7 @@ class model
             $sql = "INSERT INTO $this->table (";
 
             //Sacamos las claves que corresponden con los nombres de los campos
-            $campos = $datos->array_keys;
+            $campos = array_keys($datos);
 
             //Primero añadimos los nombres de los campos que vienen como claves en el array asociativo
             for ($i = 0; $i < count($campos); $i++) {
@@ -111,13 +118,18 @@ class model
             //Para crear la sentencia sql
             $stmt = $this->con->prepare($sql);
 
-            echo $stmt->QueryString;
+            echo $stmt->queryString;
+
+            
 
             //Ejecutamos la sentencia substituyendo las interrogacions por los valores
             //Que metemos dentro del array que le pasamos a execute
 
             for ($i = 0; $i < count($campos); $i++) {
-                $tipo = gettype($datos[$campos[$i]])=="int"?PDO::PARAM_INT:PDO::PARAM_STR;
+                //Dependiendo del tipo de dato le pongo el tipo de parametro pdo asociado
+                //Usando la funcion obtenertipoparametro
+                $tipo = Utils::obtenerTipoParametro($datos[$campos[$i]]);
+                //gettype($datos[$campos[$i]])=="int"?PDO::PARAM_INT:PDO::PARAM_STR;
                 $stmt->bindValue(':'.$campos[$i], $datos[$campos[$i]],$tipo);
             }
             $resultado = $stmt->execute($datos);
@@ -131,7 +143,7 @@ class model
         }
     }
 
-
+/*
     function modificarTodo($entrenador)
     {
         try {
@@ -164,4 +176,5 @@ class model
             return false;
         }
     }
+        */
 }

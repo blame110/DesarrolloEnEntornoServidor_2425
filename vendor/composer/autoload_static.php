@@ -8,6 +8,7 @@ class ComposerStaticInit07058d9c7e8e66f0ec423e2665aa280a
 {
     public static $files = array (
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -17,6 +18,7 @@ class ComposerStaticInit07058d9c7e8e66f0ec423e2665aa280a
         ),
         'F' => 
         array (
+            'FastRoute\\' => 10,
             'Faker\\' => 6,
         ),
     );
@@ -25,6 +27,10 @@ class ComposerStaticInit07058d9c7e8e66f0ec423e2665aa280a
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'FastRoute\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
         'Faker\\' => 
         array (

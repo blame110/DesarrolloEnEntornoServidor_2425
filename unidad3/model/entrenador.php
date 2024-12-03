@@ -1,4 +1,7 @@
 <?php
+namespace model;
+include_once('model.php');
+
 /*
 funcion insertar($con, $entrenador)
 funcion borrar($con, $idEntrenador)
@@ -13,9 +16,9 @@ funcion cargarTodosPaginado($con,$num_pag,$elem_pag)
 funcion cargarTodosFiltrado($con, $filtro, $orden)
 funcion cargarTodosFiltradoPaginado($con, $filtro,$orden,$num_pag,$elem_pag)
 */
-include_once('model.php');
 
-class Entrenador extends model
+
+class Entrenador extends Model
 {
  
 
