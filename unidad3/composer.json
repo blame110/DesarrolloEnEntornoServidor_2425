@@ -1,0 +1,17 @@
+{
+    "name": "pmpin/unidad3",
+    "autoload": {
+        "psr-4": {
+            "Pmpin\\Unidad3\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "blame110",
+            "email": "46011863+blame110@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "nikic/fast-route": "^1.3"
+    }
+}

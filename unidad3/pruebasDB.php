@@ -1,6 +1,27 @@
 <?php
 require_once("config.php");
 
+
+
+
+$nombre = "juan";
+$edad=23;
+
+//Compact me convierte variables en un array asociativo
+$datos = compact("nombre","edad");
+
+
+//Extract es lo contrario
+extract (["nif"=>1212121]);
+
+echo $nif;
+
+
+var_dump($datos);
+
+echo "<br>";
+
+
 //Conexion a la BD
 try {
     $con = new PDO($dsn, $user, $password);
@@ -127,6 +148,8 @@ try {
     //Salta una excepcion, con getMEssage sacamos la descripcion del error
     echo 'Error a ejecutar la sentencia SQL: ' . $e->getMessage();
 }
+
+
 
 
 $stmt = null;

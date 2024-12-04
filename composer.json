@@ -1,4 +1,11 @@
 {
+    "autoload": {
+        "psr-4": {
+
+            "Controllers\\": "/Controllers/",
+            "Models\\": "/Models/"
+        }
+    },
     "require": {
         "fakerphp/faker": "^1.23",
         "nikic/fast-route": "^1.3"

@@ -20,7 +20,35 @@ class Model
     function __construct($con)
     {
         //asignamos la conexion activa
-        if ($con != null) $this->con = $con;
+        if ($con != null && $this->con==null) $this->con = $con;
+    }
+
+    function cargar($id)
+    {
+        try {
+
+            //query que muestra de forma paginada los datos
+            $sql = "select * from $this->table where id".$this->table." = :id";
+
+            //Utilizamos la conexion activa de nuestro objeto
+            //Para crear la sentencia sql
+            $stmt = $this->con->prepare($sql);
+
+            //Asignamos la forma de devolver los datos
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+           
+            //Que metemos dentro del array que le pasamos a execute
+            $resultado = $stmt->execute();
+
+            //Si ha ido bien devolvemos los datos
+            if ($resultado) return $stmt->fetch();
+        } catch (PDOException $e) {
+            //Hubo un problema al eliminar el registro
+            echo 'Hubo un problema al eliminar el registro: ' . $e->getMessage();
+            return false;
+        }
     }
 
     function cargarTodoPaginado($num_pag, $elem_pag)
@@ -33,6 +61,7 @@ class Model
 
             //Utilizamos la conexion activa de nuestro objeto
             //Para crear la sentencia sql
+           
             $stmt = $this->con->prepare($sql);
 
             //Asignamos la forma de devolver los datos

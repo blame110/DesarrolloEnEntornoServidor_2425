@@ -1,10 +1,33 @@
 <?php
+
 namespace utils;
 
 use PDO;
+use PDOException;
 
 class Utils
 {
+
+    public static $dsn = 'mysql:dbname=puertobaloncesto;host=127.0.0.1';
+    public static $user = 'root';
+    public static $password = '';
+
+    static function getConnection($dsn, $user, $password)
+    {
+        //Conexion a la BD
+        try {
+
+            $con = new PDO($dsn, $user, $password);
+
+            $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            //Si ha habido un fallo al conectarse a BD
+            //Salta una excepcion, con getMEssage sacamos la descripcion del error
+            echo 'Falló la conexión: ' . $e->getMessage();
+        }
+
+        return $con;
+    }
 
     static function obtenerTipoParametro($variable)
     {
@@ -30,5 +53,18 @@ class Utils
             default:
                 return PDO::PARAM_STR; // Tipo por defecto en caso de tipo desconocido
         }
+    }
+
+    static function render($view, $data = [])
+    {
+        //Extract recibe un array asociativo con nombres de variables como las clasves y sus valores y sus valores
+        extract($data);
+        require_once  "./view/$view.php";
+    }
+
+    static function redirect($url)
+    {
+        header("Location: $url");
+        exit();
     }
 }
