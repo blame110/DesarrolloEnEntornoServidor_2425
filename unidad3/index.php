@@ -1,17 +1,28 @@
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/model/entrenador.php';
-require_once __DIR__ . '/controlador/entrenadorController.php';
-require_once __DIR__ . '/utils/utils.php';
-require_once __DIR__ . '/config.php';
+//require_once __DIR__ . '/model/entrenador.php';
+//require_once __DIR__ . '/controlador/entrenadorController.php';
+//require_once __DIR__ . '/utils/utils.php';
 
 use FastRoute\RouteCollector;
-use utils\Utils;
-use model\Entrenador;
-use Controlador\EntrenadorController;
+//use utils\Utils;
+use App\Controlador\EntrenadorController;
+use Dotenv\Dotenv;
+//use Model\Model;
+//use Models\Entrenador;
+use App\Model\Entrenador;
+use App\Model\Model;
 
+$entrenadorM = new App\Model\Model($con);
 
+$entrenadorM = new App\Model\Entrenador($con);
+
+$entrenadorC = new App\Controlador\EntrenadorController();
+
+// Inicializa dotenv para cargar las variables de entorno
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r) {
 

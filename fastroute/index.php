@@ -53,6 +53,7 @@ switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::FOUND:
         $handler = $routeInfo[1];
         $vars = $routeInfo[2];
+        //Asignacion doble de variables que se reciben desde un array
         [$class, $method] = $handler;
         $controller = new $class();
         call_user_func([$controller, $method], $vars);
