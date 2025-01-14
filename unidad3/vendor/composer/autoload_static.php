@@ -22,7 +22,6 @@ class ComposerStaticInitd0d2ab95c771b8296bd0bd0900c3a111
         ),
         'P' => 
         array (
-            'Pmpin\\Unidad3\\' => 14,
             'PhpOption\\' => 10,
         ),
         'G' => 
@@ -36,6 +35,10 @@ class ComposerStaticInitd0d2ab95c771b8296bd0bd0900c3a111
         'D' => 
         array (
             'Dotenv\\' => 7,
+        ),
+        'A' => 
+        array (
+            'App\\' => 4,
         ),
     );
 
@@ -52,10 +55,6 @@ class ComposerStaticInitd0d2ab95c771b8296bd0bd0900c3a111
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
-        'Pmpin\\Unidad3\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
@@ -71,6 +70,10 @@ class ComposerStaticInitd0d2ab95c771b8296bd0bd0900c3a111
         'Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 

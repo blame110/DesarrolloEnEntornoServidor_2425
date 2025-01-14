@@ -5,16 +5,20 @@ namespace App\utils;
 use PDO;
 use PDOException;
 
+
 class Utils
 {
 
-    public static $dsn = 'mysql:dbname=puertobaloncesto;host=127.0.0.1';
-    public static $user = 'root';
-    public static $password = '';
-
-    static function getConnection($dsn, $user, $password)
+    static function getConnection()
     {
         //Conexion a la BD
+
+        
+        //Cargamos las variables del fichero .env
+        $dsn=$_ENV['DSN'];
+        $user=$_ENV['DB_USERNAME'];
+        $password = $_ENV['DB_PASSWORD'];
+
         try {
 
             $con = new PDO($dsn, $user, $password);

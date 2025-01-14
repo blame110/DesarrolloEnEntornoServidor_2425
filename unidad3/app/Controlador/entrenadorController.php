@@ -10,7 +10,7 @@ class EntrenadorController
     public function mostrarEntrenadores()
     {
         //Nos conectamos a la bd
-        $con = Utils::getConnection($_ENV['DSN'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
+        $con = Utils::getConnection();
         //Creamos el modelo
         $entrenadorM = new Entrenador($con);
         //Cargamos los entrenadores
@@ -25,7 +25,7 @@ class EntrenadorController
     public function mostrarEntrenador($datos)
     {
         //Nos conectamos a la bd
-        $con = Utils::getConnection(Utils::$dsn, Utils::$user, Utils::$password);
+        $con = Utils::getConnection();
         //Creamos el modelo
         $entrenadorM = new Entrenador($con);
         //Cargamos los entrenadores
@@ -46,7 +46,7 @@ class EntrenadorController
        //Guardo los datos del formulario de creaccion de entrenadores 
        $entrenador=$_POST;
         //Nos conectamos a la bd
-        $con = Utils::getConnection(Utils::$dsn, Utils::$user, Utils::$password);
+        $con = Utils::getConnection();
         //Creamos el modelo
         $entrenadorM = new Entrenador($con);
         //Cargamos los entrenadores
@@ -60,7 +60,7 @@ class EntrenadorController
     {
 
        //Nos conectamos a la bd
-       $con = Utils::getConnection(Utils::$dsn, Utils::$user, Utils::$password);
+       $con = Utils::getConnection();
        //Creamos el modelo
        $entrenadorM = new Entrenador($con);
        //borramos el entrenador

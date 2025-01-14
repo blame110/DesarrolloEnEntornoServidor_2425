@@ -1,6 +1,5 @@
 <?php
 namespace App\Model;
-include_once ('./utils/utils.php');
 
 use PDO;
 use PDOException; 

@@ -14,6 +14,8 @@ funcion cargarTodosPaginado($con,$num_pag,$elem_pag)
 funcion cargarTodosFiltrado($con, $filtro, $orden)
 funcion cargarTodosFiltradoPaginado($con, $filtro,$orden,$num_pag,$elem_pag)
 */
+
+
 include_once('model.php');
 
 class Equipo extends Model

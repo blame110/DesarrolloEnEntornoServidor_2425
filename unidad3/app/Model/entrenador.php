@@ -1,7 +1,7 @@
 <?php
 namespace App\Model;
-include_once('model.php');
 
+use App\Model\Model;
 /*
 funcion insertar($con, $entrenador)
 funcion borrar($con, $idEntrenador)

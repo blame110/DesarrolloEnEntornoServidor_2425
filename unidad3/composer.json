@@ -2,7 +2,7 @@
     "name": "pmpin/unidad3",
     "autoload": {
         "psr-4": {
-            "Pmpin\\Unidad3\\": "src/"
+             "App\\": "app/"
         }
     },
     "authors": [
