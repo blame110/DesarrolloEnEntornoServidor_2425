@@ -3,6 +3,7 @@ namespace App\Controlador;
 
 use App\Utils\Utils;
 use App\Model\Entrenador;
+use Kint\Kint;
 
 class EntrenadorController
 {
@@ -18,7 +19,7 @@ class EntrenadorController
         //Compactamos los datos que necesita la vista para luego pasarselos
         $datos = compact("entrenadores");
          //Cargamos la vista
-        Utils::render('index',$datos);
+        Utils::render('listaEntrenadores',$datos);
         
     }
 
@@ -41,10 +42,12 @@ class EntrenadorController
         Utils::render('crear');
     }
 
-    public function insertarEntrenador($entrenador)
+    public function insertarEntrenador()
     {
        //Guardo los datos del formulario de creaccion de entrenadores 
        $entrenador=$_POST;
+
+      // Kint::dump($entrenador);
         //Nos conectamos a la bd
         $con = Utils::getConnection();
         //Creamos el modelo

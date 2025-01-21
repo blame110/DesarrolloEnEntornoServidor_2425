@@ -1,8 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 <?php
-require_once("config.php");
+//require_once("config.php");
+require 'vendor/autoload.php';
+//composer require kint-php/kint --dev
+use Kint\Kint;
+
+// Datos de ejemplo
+$persona = [
+    'nombre' => 'Juan',
+    'edad' => 30,
+    'dirección' => [
+        'calle' => 'Calle Falsa 123',
+        'ciudad' => 'Madrid',
+        'pais' => 'España',
+    ],
+    'intereses' => ['programación', 'deporte', 'música'],
+];
+
+echo "Ejemplo";
+Kint::dump($persona);
+
+$password = "usuario";
+
+$encriptado = password_hash($password,PASSWORD_DEFAULT);
+
+Kint::dump($password);
+Kint::dump($encriptado);
+
+if (password_verify($password,$encriptado))  echo "El password es correcto";
 
 
-
+/*
 
 $nombre = "juan";
 $edad=23;
@@ -149,8 +184,10 @@ try {
     echo 'Error a ejecutar la sentencia SQL: ' . $e->getMessage();
 }
 
-
-
-
 $stmt = null;
 $con = null;
+*/
+
+?>
+</body>
+</html>

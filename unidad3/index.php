@@ -4,6 +4,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use FastRoute\RouteCollector;
 use FastRoute\Dispatcher;
+
+
+
 //composer require vlucas/phpdotenv
 use Dotenv\Dotenv;
 
@@ -18,6 +21,8 @@ $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r) {
 
 //Con addroute voy añadiendo rutas url por get o por post a las que responderemos
 //Las que no esten aquí darán fallo
+
+
 
 //Listado de entrenadores
 $r->addRoute('GET', '/', ['App\Controlador\EntrenadorController', 'mostrarEntrenadores']);
@@ -72,11 +77,15 @@ switch ($routeInfo[0]) {
         break;
     
     case Dispatcher::FOUND:
+
+        //'GET', '/entrenadores/{id:\d+}', ['App\Controlador\EntrenadorController', 'mostrarEntrenador']
+
         $handler = $routeInfo[1];
         $vars = $routeInfo[2];
         //Asignacion doble de variables que se reciben desde un array seria igual a las dos siguientes lineas
         //$class=$handler[0];
         //$method=$handler[1];
+
         [$class, $method] = $handler;
         //Equivalente a $controller = new App\Controlador\EntrenadorController();
         $controller = new $class();
