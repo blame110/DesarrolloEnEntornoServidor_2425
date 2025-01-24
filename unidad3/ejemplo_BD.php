@@ -5,9 +5,6 @@ require_once('./model/equipo.php');
 
 use model\Entrenador;
 use model\Equipo;
-//Utilizamos la clase entrenador en este fichero
-//use Entrenador;
-
 
 echo "La base de datos que utilizamos es: ". Entrenador::$nombreBD. "<br>";
 

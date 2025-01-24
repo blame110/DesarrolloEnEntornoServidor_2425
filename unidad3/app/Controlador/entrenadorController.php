@@ -18,8 +18,10 @@ class EntrenadorController
         $entrenadores = $entrenadorM->cargarTodoPaginado(1,200);
         //Compactamos los datos que necesita la vista para luego pasarselos
         $datos = compact("entrenadores");
-         //Cargamos la vista
-        Utils::render('listaEntrenadores',$datos);
+
+        
+        //Cargamos la vista
+       Utils::render('listaEntrenadores',$datos);
         
     }
 
