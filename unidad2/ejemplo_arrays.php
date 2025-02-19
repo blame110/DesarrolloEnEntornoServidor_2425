@@ -25,6 +25,10 @@
     //Con print_r mostramos el contenido de un array
     print_r($alumno);
 
+    //Bucle que recorre el array alumno y lo muestra por pantalla
+    for ($i = 0; $i < count($alumno); $i++) {
+        print $alumno[$i] . "<br/>";
+    }
 
     //Vamos a calcular la media el maximo y el minimo de una array de numeros
     for ($i = 0; $i < 20; $i++) {
