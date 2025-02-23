@@ -23,6 +23,12 @@
                 <td>{{ $cliente->email }}</td>
                 <td>{{ $cliente->telefono }}</td>
                 <td>{{ $cliente->direccion }}</td>
+                <td>            @if ($cliente->imagen)
+                <img src="{{ asset('storage/' . $cliente->imagen) }}" alt="Imagen de {{ $cliente->nombre }}" class="img-fluid rounded" style="max-width: 200px;">
+            @else
+                <p>No hay imagen disponible.</p>
+            @endif
+                </td>
                 <td>
                     <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-warning btn-sm">Editar</a>
                     <form action="{{ route('clientes.destroy', $cliente->id) }}" method="POST" style="display:inline;">
