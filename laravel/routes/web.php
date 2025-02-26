@@ -21,7 +21,8 @@ Route::put('/clientes/{id}', [ClienteController::class, 'update'])->name('client
 Route::get('/clientes/create', [ClienteController::class, 'create'])->name('clientes.create');
 //Ruta para insertar un nuevo cliente
 Route::post('/clientes/store', [ClienteController::class, 'store'])->name('clientes.store');
-
+//Ruta para mostrar el cliente
+Route::get('/clientes/show/{id}', [ClienteController::class, 'show'])->name('clientes.show');
 
 Route::get('/prueba-factorias', function () {
 

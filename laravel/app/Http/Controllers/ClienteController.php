@@ -29,6 +29,14 @@ Route::post('/clientes/store', [ClienteController::class, 'store'])->name('clien
         return view('clientes.index', compact('clientes'));
     }
 
+    // Mostrar detalles de un cliente
+    public function show($id)
+    {
+        $cliente = Cliente::with('mascotas')->findOrFail($id);
+        return view('clientes.show', compact('cliente'));
+    }
+
+
     public function destroy($id)
     {
         //Con find sacamos el cliente con el id que le introducimos de base de datos
@@ -118,4 +126,6 @@ Route::post('/clientes/store', [ClienteController::class, 'store'])->name('clien
 
         return redirect()->route('clientes.index')->with('success', 'Cliente actualizado correctamente.');
     }
+
+
 }

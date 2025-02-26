@@ -23,7 +23,7 @@ class MascotaFactory extends Factory
             'especie' => $this->faker->randomElement(['Perro', 'Gato','Cobaya','Pescao']),
             'edad' => $this->faker->numberBetween(1, 20),
             'precio' => $this->faker->randomFloat(2, 0.5, 300.0),
-            'cliente_id' => null,
+            'cliente_id' => Cliente::all()->random()->id
         ];
     }
 }
