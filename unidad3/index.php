@@ -41,6 +41,7 @@ $r->addRoute('GET', '/listaEntrenadores/{pagina:\d+}', ['App\Controlador\Entrena
 $r->addRoute('POST', '/', ['App\Controlador\EntrenadorController', 'mostrarEntrenadoresFiltrado']);
 //Mostrar detalle de entrenador
 $r->addRoute('GET', '/entrenadores/{id:\d+}', ['App\Controlador\EntrenadorController', 'mostrarEntrenador']);
+$r->addRoute('POST', '/entrenadores/{idEntrenador:\d+}/equipo', ['App\Controlador\EntrenadorController', 'mostrarEntrenadorEquipos']);
 $r->addRoute('GET','/entrenadores/crear',['App\Controlador\EntrenadorController', 'crearEntrenador']);
 $r->addRoute('POST','/entrenadores/crear',['App\Controlador\EntrenadorController', 'insertarEntrenador']);
 $r->addRoute('GET','/entrenadores/{id:\d+}/eliminar',['App\Controlador\EntrenadorController', 'eliminarEntrenador']);

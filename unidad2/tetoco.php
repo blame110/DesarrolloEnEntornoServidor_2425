@@ -1,5 +1,5 @@
 <?php 
 
-echo "El agraciado es"  . rand(1,27);
+echo "El agraciado es"  . rand(2,10);
 
 ?>
